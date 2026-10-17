@@ -78,21 +78,6 @@ export const ContactSection = () => {
                 Direct Channels
               </div>
 
-              {personalInfo.email && (
-                <a
-                  href={`mailto:${personalInfo.email}`}
-                  className="flex items-center justify-between p-3 rounded-xl bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-200/80 dark:border-zinc-700/60 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors group"
-                >
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-4 h-4 text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500" />
-                    <div>
-                      <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">Email Address</div>
-                      <div className="text-[11px] text-zinc-500 dark:text-zinc-400">{personalInfo.email}</div>
-                    </div>
-                  </div>
-                  <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-blue-500 transition-colors" />
-                </a>
-              )}
 
               <a
                 href={personalInfo.linkedin}
