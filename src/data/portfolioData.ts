@@ -6,8 +6,6 @@ export const personalInfo = {
   headline: 'Data Scientist & AI/ML Engineer',
   subheadline: 'Specializing in Production RAG Systems, Real-Time Maritime IoT & Anomaly Detection, and End-to-End ML Pipelines.',
   bio: 'Results-driven Data Scientist with nearly 3 years of experience spanning data engineering, applied AI/ML, and enterprise software quality assurance. Currently architecting RAG-powered document intelligence systems and real-time telemetry anomaly detection for LNG vessels at Volteo Maritime. Comfortable across the full lifecycle — from ingestion and transformation to model deployment, evaluation, and quality validation.',
-  email: 'ragava3567@gmail.com',
-  phone: '+91-9705126474',
   location: 'India',
   github: 'https://github.com/rag3kumar',
   linkedin: 'https://linkedin.com/in/rag3kumar',

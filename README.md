@@ -66,10 +66,9 @@ Filterable by category:
 - One-click direct download button
 
 ### 8. Direct Contact Station
-- 1-Click Clipboard Copy for Email (`ragava3567@gmail.com`)
-- 1-Click Clipboard Copy for Phone (`+91-9705126474`)
 - Interactive direct contact message form
 - Direct links to Medium, LinkedIn, and GitHub
+- Confidential inquiry transmission
 
 ---
 

@@ -3,36 +3,21 @@
 import React, { useState } from 'react';
 import { personalInfo } from '@/data/portfolioData';
 import { 
-  Mail, 
-  Phone, 
   MapPin, 
-  Copy, 
   Check, 
   Send, 
   Linkedin, 
   Github, 
   BookOpen, 
   MessageSquare,
-  Sparkles
+  Sparkles,
+  ShieldCheck,
+  Globe
 } from 'lucide-react';
 
 export const ContactSection = () => {
-  const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const handleCopyPhone = () => {
-    navigator.clipboard.writeText(personalInfo.phone);
-    setCopiedPhone(true);
-    setTimeout(() => setCopiedPhone(false), 2000);
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,112 +42,102 @@ export const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-slate-300 light:text-slate-600 max-w-2xl text-sm sm:text-base mt-2">
-            Interested in discussing production RAG architectures, real-time IoT anomaly models, or high-impact Data Science roles? Reach out directly.
+            Interested in discussing production RAG architectures, real-time IoT anomaly models, or high-impact Data Science roles? Transmit a message directly below.
           </p>
         </div>
 
         {/* Contact Layout Grid */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Direct Connection Cards */}
+          {/* Left Column: Professional Channels & Availability */}
           <div className="lg:col-span-5 space-y-4">
             
-            {/* Email Card with 1-Click Copy */}
+            {/* Status & Location Card */}
             <div className="p-6 rounded-2xl bg-[#121524] light:bg-white border-3 border-cyan-400 shadow-[4px_4px_0px_0px_#00d2ff] light:shadow-[4px_4px_0px_0px_#0284c7]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center border-2 border-cyan-400">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-mono text-slate-400 uppercase">Direct Email</div>
-                    <div className="text-sm font-bold text-white light:text-slate-900 select-all">
-                      {personalInfo.email}
-                    </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center border-2 border-cyan-400">
+                  <Globe className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs font-mono text-slate-400 uppercase">Availability &amp; Location</div>
+                  <div className="text-sm font-bold text-white light:text-slate-900">
+                    Open to Remote &amp; Global Opportunities
                   </div>
                 </div>
-
-                <button
-                  onClick={handleCopyEmail}
-                  className="p-2 rounded-lg border-2 border-cyan-400 bg-cyan-400 text-black hover:bg-cyan-300 text-xs font-mono font-bold shadow-[2px_2px_0px_0px_#000] btn-tactile"
-                  title="Copy email to clipboard"
-                >
-                  {copiedEmail ? <Check className="w-4 h-4 text-emerald-950 font-bold" /> : <Copy className="w-4 h-4" />}
-                </button>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[#232942] light:border-slate-200 flex items-center justify-between text-xs font-mono text-slate-400">
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-rose-400" />
+                  <span>Based in {personalInfo.location}</span>
+                </span>
+                <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Active
+                </span>
               </div>
             </div>
 
-            {/* Phone Card with 1-Click Copy */}
-            <div className="p-6 rounded-2xl bg-[#121524] light:bg-white border-3 border-emerald-400 shadow-[4px_4px_0px_0px_#10b981] light:shadow-[4px_4px_0px_0px_#059669]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center border-2 border-emerald-400">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-mono text-slate-400 uppercase">Phone &bull; WhatsApp</div>
-                    <div className="text-sm font-bold text-white light:text-slate-900 select-all">
-                      {personalInfo.phone}
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  onClick={handleCopyPhone}
-                  className="p-2 rounded-lg border-2 border-emerald-400 bg-emerald-400 text-black hover:bg-emerald-300 text-xs font-mono font-bold shadow-[2px_2px_0px_0px_#000] btn-tactile"
-                  title="Copy phone to clipboard"
-                >
-                  {copiedPhone ? <Check className="w-4 h-4 text-black font-bold" /> : <Copy className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
-
-            {/* Social / Author Channels */}
+            {/* Social / Professional Profiles Card */}
             <div className="p-6 rounded-2xl bg-[#121524] light:bg-white border-3 border-purple-400 shadow-[4px_4px_0px_0px_#a855f7] light:shadow-[4px_4px_0px_0px_#7c3aed] space-y-4">
               <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
-                External Profiles &amp; Publications:
+                Professional Networks &amp; Research:
               </div>
 
-              <div className="space-y-2">
-                <a
-                  href={personalInfo.medium}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-lg bg-[#0c0e1a] light:bg-slate-50 border-2 border-[#2b3354] light:border-slate-200 hover:border-cyan-400 transition-colors group"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <BookOpen className="w-4 h-4 text-cyan-400" />
-                    <span className="text-xs font-mono font-bold text-white light:text-slate-900">Medium Articles</span>
-                  </div>
-                  <span className="text-xs font-mono text-slate-400 group-hover:text-cyan-400">@rag3kumar &rarr;</span>
-                </a>
-
+              <div className="space-y-2.5">
                 <a
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-lg bg-[#0c0e1a] light:bg-slate-50 border-2 border-[#2b3354] light:border-slate-200 hover:border-blue-400 transition-colors group"
+                  className="flex items-center justify-between p-3.5 rounded-lg bg-[#0c0e1a] light:bg-slate-50 border-2 border-[#2b3354] light:border-slate-200 hover:border-blue-400 transition-colors group"
                 >
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-3">
                     <Linkedin className="w-4 h-4 text-blue-400" />
-                    <span className="text-xs font-mono font-bold text-white light:text-slate-900">LinkedIn Profile</span>
+                    <div>
+                      <div className="text-xs font-mono font-bold text-white light:text-slate-900">LinkedIn Profile</div>
+                      <div className="text-[11px] text-slate-400">Connect for professional discussions</div>
+                    </div>
                   </div>
-                  <span className="text-xs font-mono text-slate-400 group-hover:text-blue-400">Connect &rarr;</span>
+                  <span className="text-xs font-mono text-slate-400 group-hover:text-blue-400 font-bold">&rarr;</span>
                 </a>
 
                 <a
                   href={personalInfo.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-lg bg-[#0c0e1a] light:bg-slate-50 border-2 border-[#2b3354] light:border-slate-200 hover:border-emerald-400 transition-colors group"
+                  className="flex items-center justify-between p-3.5 rounded-lg bg-[#0c0e1a] light:bg-slate-50 border-2 border-[#2b3354] light:border-slate-200 hover:border-emerald-400 transition-colors group"
                 >
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-3">
                     <Github className="w-4 h-4 text-emerald-400" />
-                    <span className="text-xs font-mono font-bold text-white light:text-slate-900">GitHub Repository</span>
+                    <div>
+                      <div className="text-xs font-mono font-bold text-white light:text-slate-900">GitHub Profile</div>
+                      <div className="text-[11px] text-slate-400">Repositories &amp; open-source code</div>
+                    </div>
                   </div>
-                  <span className="text-xs font-mono text-slate-400 group-hover:text-emerald-400">View Code &rarr;</span>
+                  <span className="text-xs font-mono text-slate-400 group-hover:text-emerald-400 font-bold">&rarr;</span>
+                </a>
+
+                <a
+                  href={personalInfo.medium}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-between p-3.5 rounded-lg bg-[#0c0e1a] light:bg-slate-50 border-2 border-[#2b3354] light:border-slate-200 hover:border-cyan-400 transition-colors group"
+                >
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="w-4 h-4 text-cyan-400" />
+                    <div>
+                      <div className="text-xs font-mono font-bold text-white light:text-slate-900">Medium Publications</div>
+                      <div className="text-[11px] text-slate-400">Technical maritime AI articles</div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono text-slate-400 group-hover:text-cyan-400 font-bold">&rarr;</span>
                 </a>
               </div>
+            </div>
+
+            {/* Privacy Guarantee Note */}
+            <div className="p-4 rounded-xl bg-[#0e111d] light:bg-slate-100 border-2 border-[#22273c] light:border-slate-300 flex items-center gap-2.5 text-xs font-mono text-slate-400">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>Direct messages submitted through this portal are delivered securely.</span>
             </div>
 
           </div>
@@ -174,10 +149,10 @@ export const ContactSection = () => {
               <div className="pb-4 border-b-2 border-[#232942] light:border-slate-200 mb-6">
                 <h3 className="text-xl font-black text-white light:text-slate-900 flex items-center gap-2">
                   <MessageSquare className="w-5 h-5 text-amber-400" />
-                  <span>Send a Message</span>
+                  <span>Send a Direct Message</span>
                 </h3>
                 <p className="text-xs text-slate-400 light:text-slate-600 font-mono mt-1">
-                  Deliver an instant note directly to Uday Raghavendra.
+                  Leave your details and project inquiries to start a conversation.
                 </p>
               </div>
 
@@ -186,9 +161,9 @@ export const ContactSection = () => {
                   <div className="w-12 h-12 rounded-full bg-emerald-400 text-black mx-auto flex items-center justify-center font-bold">
                     <Check className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg font-bold text-emerald-300">Message Received!</h4>
+                  <h4 className="text-lg font-bold text-emerald-300">Message Transmitted!</h4>
                   <p className="text-xs font-mono text-slate-300">
-                    Thank you for reaching out. I will respond to your email at the earliest opportunity.
+                    Thank you for reaching out. I will respond to your inquiry promptly.
                   </p>
                 </div>
               ) : (
@@ -209,7 +184,7 @@ export const ContactSection = () => {
                     </div>
                     <div>
                       <label className="block text-xs font-mono font-bold text-slate-400 uppercase mb-1">
-                        Email Address
+                        Your Email Address
                       </label>
                       <input
                         type="email"
@@ -245,7 +220,7 @@ export const ContactSection = () => {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Write your note or project inquiry here..."
+                      placeholder="Write your message or role specifications here..."
                       className="w-full bg-[#0b0e1a] light:bg-slate-50 text-white light:text-slate-900 px-4 py-2.5 rounded-lg border-2 border-[#2c3454] light:border-slate-300 text-xs font-mono focus:outline-none focus:border-amber-400"
                     ></textarea>
                   </div>

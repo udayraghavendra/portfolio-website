@@ -127,11 +127,22 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
                 <span className="font-bold underline">IEEE Xplore</span>
               </a>
               <a
-                href={`mailto:${personalInfo.email}`}
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
+              >
+                <Linkedin className="w-3.5 h-3.5" />
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
               >
-                <Mail className="w-3.5 h-3.5" />
-                <span>{personalInfo.email}</span>
+                <Github className="w-3.5 h-3.5" />
+                <span>GitHub</span>
               </a>
             </div>
 
