@@ -20,25 +20,18 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem('theme-preference') as Theme | null;
-    if (stored) {
-      setTheme(stored);
-      document.documentElement.classList.toggle('light', stored === 'light');
-    } else {
-      setTheme('dark');
-      document.documentElement.classList.remove('light');
-    }
+    const stored = (localStorage.getItem('theme-preference') as Theme) || 'dark';
+    setTheme(stored);
+    document.documentElement.classList.remove('dark', 'light');
+    document.documentElement.classList.add(stored);
   }, []);
 
   const toggleTheme = () => {
-    const next = theme === 'dark' ? 'light' : 'dark';
+    const next: Theme = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
     localStorage.setItem('theme-preference', next);
-    if (next === 'light') {
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-    }
+    document.documentElement.classList.remove('dark', 'light');
+    document.documentElement.classList.add(next);
   };
 
   return (

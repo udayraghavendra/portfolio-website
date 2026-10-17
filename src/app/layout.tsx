@@ -5,25 +5,25 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 export const metadata: Metadata = {
   title: 'Adabala Uday Raghavendra Kumar | Data Scientist & AI/ML Engineer',
   description:
-    'Portfolio of Adabala Uday Raghavendra Kumar — Data Scientist at Volteo Maritime specializing in Production RAG architectures, real-time LNG IoT telemetry, BOG predictive modelling, and enterprise security AI.',
+    'Resume & portfolio of Adabala Uday Raghavendra Kumar — Data Scientist specializing in Production RAG architectures, real-time IoT anomaly detection, and predictive ML models.',
   keywords: [
     'Adabala Uday Raghavendra Kumar',
+    'Uday Raghavendra',
     'Data Scientist',
-    'RAG Architect',
-    'Volteo Maritime',
-    'LangChain',
-    'QdrantDB',
-    'NVIDIA NIM',
-    'Maritime IoT',
-    'Boil-Off Gas Modelling',
-    'Securden Technologies',
     'Machine Learning Engineer',
+    'Volteo Maritime',
+    'RAG Systems',
+    'LangChain',
+    'LlamaIndex',
+    'QdrantDB',
+    'Time Series ML',
+    'Securden Technologies',
   ],
   authors: [{ name: 'Adabala Uday Raghavendra Kumar' }],
   openGraph: {
     title: 'Adabala Uday Raghavendra Kumar | Data Scientist & AI/ML Engineer',
     description:
-      'Production RAG systems, maritime IoT telemetry anomaly detection, and predictive ML models.',
+      'Data Scientist specializing in Production RAG systems, IoT telemetry anomaly detection, and end-to-end ML pipelines.',
     type: 'website',
   },
 };
@@ -34,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen bg-canvas-dark text-slate-100 transition-colors duration-200">
+    <html lang="en" className="dark scroll-smooth">
+      <body className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#090a0f] dark:text-slate-100 transition-colors duration-200 antialiased selection:bg-blue-500/20 selection:text-blue-500">
         <ThemeProvider>
           {children}
         </ThemeProvider>

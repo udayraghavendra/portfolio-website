@@ -3,11 +3,9 @@
 import React, { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { RAGVisualizer } from '@/components/RAGVisualizer';
-import { TelemetrySimulator } from '@/components/TelemetrySimulator';
 import { Experience } from '@/components/Experience';
-import { Publications } from '@/components/Publications';
 import { SkillMatrix } from '@/components/SkillMatrix';
+import { Publications } from '@/components/Publications';
 import { Education } from '@/components/Education';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
@@ -17,7 +15,7 @@ export default function Home() {
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0a0b10] light:bg-[#f8fafc] text-white light:text-slate-900 bg-grid-pattern relative">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#090a0f] text-zinc-900 dark:text-zinc-100 transition-colors duration-200">
       {/* Navigation */}
       <Navbar onOpenResume={() => setResumeModalOpen(true)} />
 
@@ -26,25 +24,19 @@ export default function Home() {
         {/* Hero Section */}
         <Hero onOpenResume={() => setResumeModalOpen(true)} />
 
-        {/* Interactive Production RAG System Studio */}
-        <RAGVisualizer />
-
-        {/* Interactive Real-Time Maritime Telemetry & Anomaly Simulator */}
-        <TelemetrySimulator />
-
-        {/* Work Experience */}
+        {/* Professional Experience */}
         <Experience />
+
+        {/* Technical Skills & Competencies */}
+        <SkillMatrix />
 
         {/* Research & Publications */}
         <Publications />
 
-        {/* Technical Arsenal & Skills */}
-        <SkillMatrix />
-
-        {/* Education & Degrees */}
+        {/* Education & Qualifications */}
         <Education />
 
-        {/* Contact Station */}
+        {/* Contact Section */}
         <ContactSection />
       </main>
 

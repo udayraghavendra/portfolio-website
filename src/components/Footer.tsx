@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { personalInfo } from '@/data/portfolioData';
-import { ArrowUp, Terminal, Heart } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 interface FooterProps {
   onOpenResume: () => void;
@@ -14,50 +14,68 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
   };
 
   return (
-    <footer className="py-12 bg-[#06070a] light:bg-slate-100 border-t-3 border-[#22273d] light:border-slate-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="py-12 border-t border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-[#090a0f]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           
-          <div className="flex flex-col items-center md:items-start space-y-1">
-            <div className="flex items-center gap-2 font-mono text-xs font-bold text-white light:text-slate-900">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
-              <span>{personalInfo.name}</span>
-            </div>
-            <p className="text-xs text-slate-400 light:text-slate-500 font-mono">
-              Data Scientist &bull; Production RAG Systems &bull; Maritime IoT
+          <div className="flex flex-col items-center sm:items-start space-y-1">
+            <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100">
+              {personalInfo.name}
+            </span>
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              Data Scientist &bull; Applied AI/ML &bull; Time-Series Telemetry
             </p>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-zinc-600 dark:text-zinc-400">
             <button
               onClick={onOpenResume}
-              className="hover:text-cyan-400 transition-colors"
+              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
               Resume PDF
             </button>
-            <span>&bull;</span>
+            <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
             <a
-              href="https://medium.com/@rag3kumar"
+              href={personalInfo.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-amber-400 transition-colors"
+              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            >
+              LinkedIn
+            </a>
+            <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            >
+              GitHub
+            </a>
+            <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
+            <a
+              href={personalInfo.medium}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
               Medium
             </a>
-            <span>&bull;</span>
+            <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
             <a
               href="https://ieeexplore.ieee.org/document/9776898"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
               IEEE Xplore
             </a>
-            <span>&bull;</span>
+            <span className="text-zinc-300 dark:text-zinc-700">&bull;</span>
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1 hover:text-white light:hover:text-black p-1.5 rounded border border-[#2b3354] light:border-slate-300"
+              className="p-1.5 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
               title="Back to top"
+              aria-label="Back to top"
             >
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
@@ -65,12 +83,12 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
 
         </div>
 
-        <div className="mt-8 pt-6 border-t border-[#1c2136] light:border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-slate-500">
+        <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-zinc-400 dark:text-zinc-500">
           <div>
             &copy; {new Date().getFullYear()} Adabala Uday Raghavendra Kumar. All rights reserved.
           </div>
           <div>
-            Modern Thicker Color Architecture &bull; Next.js &amp; Tailwind CSS
+            Built with Next.js &amp; Tailwind CSS
           </div>
         </div>
       </div>

@@ -44,14 +44,3 @@ export interface SkillCategory {
     description?: string;
   }[];
 }
-
-export interface PipelineStage {
-  id: number;
-  title: string;
-  subtitle: string;
-  tech: string[];
-  description: string;
-  details: string[];
-  metrics: string;
-  accent: 'cyan' | 'emerald' | 'amber' | 'purple' | 'rose' | 'blue';
-}
