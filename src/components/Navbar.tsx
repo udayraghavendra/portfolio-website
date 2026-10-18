@@ -14,7 +14,6 @@ import {
   Moon, 
   Menu, 
   X,
-  Heart
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -25,8 +24,6 @@ export const Navbar = ({ onOpenResume }: NavbarProps) => {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [likes, setLikes] = useState(1);
-  const [liked, setLiked] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,13 +32,6 @@ export const Navbar = ({ onOpenResume }: NavbarProps) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleLike = () => {
-    if (!liked) {
-      setLikes(prev => prev + 1);
-      setLiked(true);
-    }
-  };
 
   const navLinks = [
     { name: 'Home', href: '#', icon: Home },
@@ -55,24 +45,21 @@ export const Navbar = ({ onOpenResume }: NavbarProps) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0b0416]/90 light:bg-white/90 backdrop-blur-md border-b border-[#29254c]/60 light:border-zinc-200 shadow-lg py-3'
+          ? 'bg-[#0f1117]/90 light:bg-white/90 backdrop-blur-md border-b border-zinc-800/60 light:border-zinc-200 shadow-lg py-3'
           : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Brand like "Sb." in screenshot -> "Uk." */}
-          <a
-            href="#"
-            className="flex items-center gap-1.5 group"
-          >
-            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#c770f0] transition-transform group-hover:scale-105">
-              Uk.
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2 group">
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 transition-transform group-hover:scale-[1.02]">
+              <span className="text-indigo-400">Uday</span> Raghavendra
             </span>
           </a>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link) => {
               const Icon = link.icon;
@@ -80,54 +67,40 @@ export const Navbar = ({ onOpenResume }: NavbarProps) => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-zinc-300 light:text-zinc-700 hover:text-[#c770f0] light:hover:text-[#8720c7] transition-colors relative group"
+                  className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-zinc-400 light:text-zinc-600 hover:text-zinc-100 light:hover:text-zinc-900 transition-colors relative group"
                 >
-                  <Icon className="w-4 h-4 text-[#c770f0] light:text-[#8720c7] opacity-80 group-hover:opacity-100" />
+                  <Icon className="w-4 h-4 text-zinc-500 group-hover:text-indigo-400 transition-colors" />
                   <span>{link.name}</span>
-                  <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#c770f0] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
+                  <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-indigo-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
                 </a>
               );
             })}
 
-            {/* Resume Nav Button */}
             <button
               onClick={onOpenResume}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-zinc-300 light:text-zinc-700 hover:text-[#c770f0] light:hover:text-[#8720c7] transition-colors relative group"
+              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-zinc-400 light:text-zinc-600 hover:text-zinc-100 transition-colors relative group"
             >
-              <FileText className="w-4 h-4 text-[#c770f0] light:text-[#8720c7] opacity-80 group-hover:opacity-100" />
+              <FileText className="w-4 h-4 text-zinc-500 group-hover:text-indigo-400 transition-colors" />
               <span>Resume</span>
-              <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#c770f0] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
+              <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-indigo-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
             </button>
           </nav>
 
-          {/* Right Action Icons: Theme Toggle + Like Pill */}
+          {/* Right Controls */}
           <div className="flex items-center gap-2.5">
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-lg text-zinc-400 hover:text-[#c770f0] hover:bg-[#1a1738]/60 transition-colors"
+              className="p-2 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800/60 transition-colors"
             >
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
 
-            {/* Like Badge like in reference screenshot */}
-            <button
-              onClick={handleLike}
-              className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
-                liked 
-                  ? 'bg-[#623686]/60 border-[#c770f0] text-white' 
-                  : 'bg-[#181534]/70 hover:bg-[#623686]/40 border-[#3d3368] text-purple-300'
-              }`}
-            >
-              <Heart className={`w-3.5 h-3.5 ${liked ? 'fill-[#c770f0] text-[#c770f0]' : 'text-[#c770f0]'}`} />
-              <span>{likes}</span>
-            </button>
-
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
-              className="md:hidden p-2 rounded-lg text-zinc-300 hover:text-[#c770f0] hover:bg-[#1a1738]"
+              className="md:hidden p-2 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -138,7 +111,7 @@ export const Navbar = ({ onOpenResume }: NavbarProps) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#29254c] bg-[#0b0416]/98 backdrop-blur-xl px-4 pt-3 pb-5 space-y-2 animate-in slide-in-from-top-2">
+        <div className="md:hidden border-b border-zinc-800/60 bg-[#0f1117]/98 backdrop-blur-xl px-4 pt-3 pb-5 space-y-2 animate-in slide-in-from-top-2">
           {navLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -146,9 +119,9 @@ export const Navbar = ({ onOpenResume }: NavbarProps) => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-zinc-200 hover:text-[#c770f0] rounded-lg hover:bg-[#181534]"
+                className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-zinc-300 hover:text-zinc-100 rounded-lg hover:bg-zinc-800/60"
               >
-                <Icon className="w-4 h-4 text-[#c770f0]" />
+                <Icon className="w-4 h-4 text-zinc-500" />
                 <span>{link.name}</span>
               </a>
             );
@@ -159,9 +132,9 @@ export const Navbar = ({ onOpenResume }: NavbarProps) => {
               setMobileMenuOpen(false);
               onOpenResume();
             }}
-            className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-zinc-200 hover:text-[#c770f0] rounded-lg hover:bg-[#181534]"
+            className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-zinc-300 hover:text-zinc-100 rounded-lg hover:bg-zinc-800/60"
           >
-            <FileText className="w-4 h-4 text-[#c770f0]" />
+            <FileText className="w-4 h-4 text-zinc-500" />
             <span>Resume</span>
           </button>
         </div>

@@ -35,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0b0416] dark:text-slate-100 bg-cosmic-stars transition-colors duration-200 antialiased selection:bg-[#c770f0]/30 selection:text-white">
+      <body className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0f1117] dark:text-slate-100 transition-colors duration-200 antialiased">
         <ThemeProvider>
           {children}
         </ThemeProvider>

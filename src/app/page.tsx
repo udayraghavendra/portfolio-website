@@ -15,7 +15,7 @@ export default function Home() {
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0b0416] bg-cosmic-stars text-zinc-900 dark:text-zinc-100 transition-colors duration-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0f1117] text-zinc-900 dark:text-zinc-100 transition-colors duration-200">
       {/* Navigation */}
       <Navbar onOpenResume={() => setResumeModalOpen(true)} />
 

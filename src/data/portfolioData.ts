@@ -181,15 +181,16 @@ export const educationData: EducationItem[] = [
 export const skillCategories: SkillCategory[] = [
   {
     category: 'AI & LLM Systems',
-    description: 'Enterprise RAG pipelines, Model Context Protocol (MCP), agentic workflows, and conversational AI assistants.',
+    description: 'Autonomous AI agents, agent skills, tool calling, Model Context Protocol (MCP), and LLM systems.',
     color: 'blue',
     skills: [
+      { name: 'AI Agents & Agentic Workflows', level: 'Advanced', description: 'Multi-agent orchestration, autonomous goal execution & planning' },
+      { name: 'Tool Calling & Function Calling', level: 'Advanced', description: 'Structured outputs, external API invocation & schema validation' },
+      { name: 'Agent Skills & Custom Tools', level: 'Advanced', description: 'Modular capabilities, custom toolsets & MCP integrations' },
       { name: 'Model Context Protocol (MCP)', level: 'Advanced', description: 'Custom dev MCP servers & agent tooling' },
       { name: 'LangChain & LlamaIndex', level: 'Advanced', description: 'Document pipelines & agentic workflows' },
       { name: 'Google Gemini SDK', level: 'Advanced', description: 'Database diagnostic bots & multimodal APIs' },
       { name: 'QdrantDB (Vector DB)', level: 'Advanced', description: 'HNSW indexing & filtered payload search' },
-      { name: 'Production RAG Systems', level: 'Advanced', description: 'Maritime technical docs & regulations assistant' },
-      { name: 'Hybrid Retrieval (Dense + BM25)', level: 'Advanced', description: 'Lexical and semantic rank fusion' },
     ],
   },
   {
@@ -209,9 +210,11 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Machine Learning',
-    description: 'Statistical anomaly detection, telemetry preprocessing, clustering, and predictive time-series models.',
+    description: 'Statistical anomaly detection, clustering, classification, telemetry preprocessing, and predictive models.',
     color: 'amber',
     skills: [
+      { name: 'Clustering Algorithms', level: 'Advanced', description: 'K-Means, DBSCAN, Hierarchical / Agglomerative, HDBSCAN' },
+      { name: 'Classification Algorithms', level: 'Advanced', description: 'Random Forest, XGBoost, LightGBM, Logistic Regression, SVM, Decision Trees' },
       { name: 'PyTorch', level: 'Advanced', description: 'Deep learning modeling, CNNs & neural network training' },
       { name: 'Parameter Clustering', level: 'Advanced', description: 'Operating state analysis & parameter correlation' },
       { name: 'Steady-State & IQR Filtering', level: 'Advanced', description: 'Vessel telemetry preprocessing & outlier removal' },

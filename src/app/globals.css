@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #0b0416;
+  --background: #0f1117;
   --foreground: #f1f5f9;
-  --muted: #a7a9be;
-  --card: #151329;
-  --card-border: #282449;
-  --accent: #c770f0;
+  --muted: #94a3b8;
+  --card: #161b27;
+  --card-border: #1e2a3a;
+  --accent: #6366f1;
 }
 
 .light {
@@ -17,7 +17,7 @@
   --muted: #64748b;
   --card: #ffffff;
   --card-border: #e2e8f0;
-  --accent: #8720c7;
+  --accent: #4f46e5;
 }
 
 body {
@@ -30,45 +30,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Cosmic starry background pattern */
-.bg-cosmic-stars {
-  background-color: #0b0416;
-  background-image: 
-    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 40px 70px, #c770f0, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 160px 120px, #a855f7, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 230px 190px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 290px 80px, #c770f0, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 350px 240px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 420px 60px, #a855f7, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 510px 170px, #ffffff, rgba(0,0,0,0));
-  background-repeat: repeat;
-  background-size: 550px 550px;
-}
-
-.light .bg-cosmic-stars {
-  background-color: #f8fafc;
-  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
 /* Refined custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0416;
+  background: #0f1117;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #39325c;
+  background: #1e293b;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c770f0;
+  background: #334155;
 }
 
 .light ::-webkit-scrollbar-track {
@@ -80,16 +57,16 @@ body {
 }
 
 .light ::-webkit-scrollbar-thumb:hover {
-  background: #8720c7;
+  background: #94a3b8;
 }
 
-/* Cosmic purple selection */
+/* Professional selection color */
 ::selection {
-  background: rgba(199, 112, 240, 0.35);
+  background: rgba(99, 102, 241, 0.25);
   color: #ffffff;
 }
 
 .light ::selection {
-  background: rgba(135, 32, 199, 0.2);
+  background: rgba(79, 70, 229, 0.15);
   color: #0f172a;
 }
