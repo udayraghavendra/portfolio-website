@@ -10,7 +10,7 @@ export const personalInfo = {
   github: 'https://github.com/rag3kumar',
   linkedin: 'https://linkedin.com/in/rag3kumar',
   medium: 'https://medium.com/@rag3kumar',
-  resumeUrl: '/auday_resume.pdf',
+  resumeUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/auday_resume.pdf`,
   status: 'Open to High-Impact Data Science & AI Opportunities',
 };
 

@@ -131,7 +131,7 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
               </button>
 
               <a
-                href="/auday_resume.pdf"
+                href={personalInfo.resumeUrl}
                 download="Adabala_Uday_Resume.pdf"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium bg-white hover:bg-zinc-100 text-zinc-800 border border-zinc-300 shadow-sm dark:bg-zinc-800/80 dark:hover:bg-zinc-700/80 dark:text-zinc-200 dark:border-zinc-700/60 dark:shadow-none transition-colors"
               >

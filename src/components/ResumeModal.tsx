@@ -39,7 +39,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
 
           <div className="flex items-center gap-2">
             <a
-              href="/auday_resume.pdf"
+              href={personalInfo.resumeUrl}
               download="Adabala_Uday_Resume.pdf"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-600 dark:hover:bg-indigo-500 transition-colors shadow-sm"
             >
@@ -48,7 +48,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
             </a>
 
             <a
-              href="/auday_resume.pdf"
+              href={personalInfo.resumeUrl}
               target="_blank"
               rel="noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
@@ -71,7 +71,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
         {/* Embedded PDF Viewer */}
         <div className="flex-1 bg-zinc-100 dark:bg-zinc-900 relative overflow-hidden">
           <iframe
-            src="/auday_resume.pdf#toolbar=0&navpanes=0"
+            src={`${personalInfo.resumeUrl}#toolbar=0&navpanes=0`}
             className="w-full h-full border-none"
             title="Adabala Uday Resume"
           />
@@ -85,7 +85,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="/auday_resume.pdf"
+              href={personalInfo.resumeUrl}
               download="Adabala_Uday_Resume.pdf"
               className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline"
             >
