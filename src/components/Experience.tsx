@@ -25,7 +25,7 @@ export const Experience = () => {
             Professional Experience &amp; Engineering Roles
           </h2>
           <p className="text-base text-zinc-600 dark:text-zinc-400 mt-2">
-            Nearly 3 years of industry engineering across applied AI/ML pipelines, production RAG systems, and enterprise cybersecurity validation.
+            Nearly 3 years of industry engineering across Python data ETL pipelines, applied AI/ML architectures, production RAG systems, and uncovering unknown analytical insights from operational data.
           </p>
         </div>
 

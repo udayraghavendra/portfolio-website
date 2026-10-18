@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #090a0f;
+  --background: #0b0416;
   --foreground: #f1f5f9;
-  --muted: #94a3b8;
-  --card: #11131c;
-  --card-border: #1e2235;
-  --accent: #3b82f6;
+  --muted: #a7a9be;
+  --card: #151329;
+  --card-border: #282449;
+  --accent: #c770f0;
 }
 
 .light {
@@ -17,7 +17,7 @@
   --muted: #64748b;
   --card: #ffffff;
   --card-border: #e2e8f0;
-  --accent: #2563eb;
+  --accent: #8720c7;
 }
 
 body {
@@ -30,33 +30,49 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle dot grid for realistic engineering feel */
-.bg-minimal-grid {
-  background-size: 24px 24px;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+/* Cosmic starry background pattern */
+.bg-cosmic-stars {
+  background-color: #0b0416;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, #c770f0, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 230px 190px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 290px 80px, #c770f0, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 350px 240px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 420px 60px, #a855f7, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 510px 170px, #ffffff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 550px 550px;
 }
 
-.light .bg-minimal-grid {
+.light .bg-cosmic-stars {
+  background-color: #f8fafc;
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
-  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
 }
 
-/* Refined minimal scrollbar */
+/* Refined custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #0b0416;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232738;
+  background: #39325c;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333a52;
+  background: #c770f0;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }
 
 .light ::-webkit-scrollbar-thumb {
@@ -64,16 +80,16 @@ body {
 }
 
 .light ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #8720c7;
 }
 
-/* Selection */
+/* Cosmic purple selection */
 ::selection {
-  background: rgba(59, 130, 246, 0.25);
+  background: rgba(199, 112, 240, 0.35);
   color: #ffffff;
 }
 
 .light ::selection {
-  background: rgba(37, 99, 235, 0.2);
+  background: rgba(135, 32, 199, 0.2);
   color: #0f172a;
 }

@@ -14,23 +14,24 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
   };
 
   return (
-    <footer className="py-12 border-t border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-[#090a0f]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="py-12 border-t border-zinc-200 dark:border-[#252044] bg-white dark:bg-[#0b0416]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           
           <div className="flex flex-col items-center sm:items-start space-y-1">
-            <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100">
-              {personalInfo.name}
+            <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">
+              <span className="text-[#c770f0] font-extrabold">Uk.</span>
+              <span>{personalInfo.name}</span>
             </span>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
-              Data Scientist &bull; Applied AI/ML &bull; Time-Series Telemetry
+              {personalInfo.headline}
             </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-zinc-600 dark:text-zinc-400">
             <button
               onClick={onOpenResume}
-              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="hover:text-[#c770f0] transition-colors"
             >
               Resume PDF
             </button>
@@ -39,7 +40,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="hover:text-[#c770f0] transition-colors"
             >
               LinkedIn
             </a>
@@ -48,7 +49,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href={personalInfo.github}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="hover:text-[#c770f0] transition-colors"
             >
               GitHub
             </a>
@@ -57,7 +58,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href={personalInfo.medium}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="hover:text-[#c770f0] transition-colors"
             >
               Medium
             </a>
@@ -66,7 +67,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href="https://ieeexplore.ieee.org/document/9776898"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              className="hover:text-[#c770f0] transition-colors"
             >
               IEEE Xplore
             </a>
