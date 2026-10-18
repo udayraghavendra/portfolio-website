@@ -9,7 +9,7 @@ export const personalInfo = {
   location: 'India',
   github: 'https://github.com/rag3kumar',
   linkedin: 'https://linkedin.com/in/rag3kumar',
-  medium: 'https://medium.com/@rag3kumar',
+  medium: 'https://medium.com/@kumaraimail568',
   resumeUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/auday_resume.pdf`,
   status: 'Open to High-Impact Data Science & AI Opportunities',
 };
@@ -125,7 +125,7 @@ export const publicationsData: PublicationItem[] = [
     publisher: 'Medium (Volteo Maritime)',
     year: '2025',
     authors: ['Adabala Uday Raghavendra Kumar'],
-    url: 'https://medium.com/@rag3kumar',
+    url: 'https://medium.com/@kumaraimail568',
     abstract:
       'Explores the practical implementation of machine learning architectures for continuous telemetry monitoring, Boil-Off Gas (BOG) predictive tracking, and sensor anomaly detection on liquefied natural gas (LNG) carriers to optimize fuel efficiency and cargo integrity.',
     tags: ['Maritime IoT', 'LNG Telemetry', 'Boil-Off Gas (BOG)', 'Predictive Modelling', 'Time Series'],
