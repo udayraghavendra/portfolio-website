@@ -14,13 +14,13 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
   };
 
   return (
-    <footer className="py-12 border-t border-zinc-200 dark:border-zinc-800/60 bg-white dark:bg-[#0f1117]">
+    <footer className="py-10 sm:py-12 border-t border-zinc-200 dark:border-zinc-800/60 bg-white dark:bg-[#0f1117]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           
-          <div className="flex flex-col items-center sm:items-start space-y-1">
+          <div className="flex flex-col items-center sm:items-start space-y-1 text-center sm:text-left">
             <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">
-              <span className="text-indigo-400 font-bold">Uday</span>
+              <span className="text-indigo-600 dark:text-indigo-400 font-bold">Uday</span>
               <span>Raghavendra Kumar</span>
             </span>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
@@ -28,10 +28,10 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-zinc-600 dark:text-zinc-400">
             <button
               onClick={onOpenResume}
-              className="hover:text-indigo-400 transition-colors"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               Resume PDF
             </button>
@@ -40,7 +40,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-indigo-400 transition-colors"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               LinkedIn
             </a>
@@ -49,7 +49,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href={personalInfo.github}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-indigo-400 transition-colors"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               GitHub
             </a>
@@ -58,7 +58,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href={personalInfo.medium}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-indigo-400 transition-colors"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               Medium
             </a>
@@ -67,7 +67,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
               href="https://ieeexplore.ieee.org/document/9776898"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-indigo-400 transition-colors"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
               IEEE Xplore
             </a>
@@ -84,7 +84,7 @@ export const Footer = ({ onOpenResume }: FooterProps) => {
 
         </div>
 
-        <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-zinc-400 dark:text-zinc-500">
+        <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-zinc-400 dark:text-zinc-500 text-center sm:text-left">
           <div>
             &copy; {new Date().getFullYear()} Adabala Uday Raghavendra Kumar. All rights reserved.
           </div>

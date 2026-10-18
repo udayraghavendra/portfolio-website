@@ -51,7 +51,7 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
   }, [currentText, isDeleting, currentWordIndex]);
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section className="relative pt-24 pb-14 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden">
 
       {/* Subtle ambient gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/40 via-transparent to-transparent dark:from-indigo-950/20 pointer-events-none -z-10" />
@@ -59,14 +59,14 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main 2-Column Hero Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 items-center">
           
-          {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Left Column: Greeting, Name, Typewriter & Bio */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             
             {/* Greeting */}
             <div className="flex items-center gap-2">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Hi There!{' '}
                 <span className="inline-block animate-wave origin-[70%_70%] select-none">
                   👋
@@ -75,39 +75,39 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
             </div>
 
             {/* Name Headline */}
-            <div className="space-y-2">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-zinc-900 dark:text-zinc-100 leading-[1.15]">
+            <div className="space-y-1">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-zinc-900 dark:text-zinc-100 leading-[1.2] sm:leading-[1.15]">
                 I&apos;M{' '}
-                <span className="text-indigo-600 dark:text-indigo-400 font-extrabold uppercase tracking-tight">
+                <span className="text-indigo-600 dark:text-indigo-400 font-extrabold uppercase tracking-tight break-words">
                   {personalInfo.shortName}
                 </span>
               </h1>
             </div>
 
             {/* Typewriter */}
-            <div className="h-12 flex items-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-600 dark:text-indigo-400 flex items-center">
+            <div className="min-h-[2.5rem] sm:min-h-[3rem] flex items-center">
+              <div className="text-xl sm:text-3xl md:text-4xl font-bold text-indigo-600 dark:text-indigo-400 flex items-center">
                 <span>{currentText}</span>
-                <span className="animate-pulse text-indigo-600 dark:text-indigo-400 ml-1 font-mono font-light text-3xl sm:text-4xl">
+                <span className="animate-pulse text-indigo-600 dark:text-indigo-400 ml-1 font-mono font-light text-2xl sm:text-4xl">
                   |
                 </span>
               </div>
             </div>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg font-medium text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg font-medium text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-2xl">
               {personalInfo.subheadline}
             </p>
 
             {/* Bio */}
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-2xl">
+            <p className="text-xs sm:text-sm md:text-base text-zinc-600 dark:text-zinc-400 font-normal leading-relaxed max-w-2xl">
               {personalInfo.bio}
             </p>
 
             {/* Status + Location */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 dark:bg-indigo-950/50 dark:text-indigo-300 dark:border-indigo-800/50">
-                <span className="relative flex h-2 w-2">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 dark:bg-indigo-950/50 dark:text-indigo-300 dark:border-indigo-800/50">
+                <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-60" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" />
                 </span>
@@ -115,40 +115,40 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
               </div>
 
               <div className="inline-flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
-                <MapPin className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
+                <MapPin className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400 shrink-0" />
                 <span>{personalInfo.location}</span>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 pt-3 sm:pt-4">
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white shadow-md shadow-indigo-500/20 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white shadow-md shadow-indigo-500/20 active:scale-[0.98] transition-all"
               >
-                <FileText className="w-4 h-4" />
+                <FileText className="w-4 h-4 shrink-0" />
                 <span>View Resume (PDF)</span>
               </button>
 
               <a
                 href={personalInfo.resumeUrl}
                 download="Adabala_Uday_Resume.pdf"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium bg-white hover:bg-zinc-100 text-zinc-800 border border-zinc-300 shadow-sm dark:bg-zinc-800/80 dark:hover:bg-zinc-700/80 dark:text-zinc-200 dark:border-zinc-700/60 dark:shadow-none transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium bg-white hover:bg-zinc-100 text-zinc-800 border border-zinc-300 shadow-sm dark:bg-zinc-800/80 dark:hover:bg-zinc-700/80 dark:text-zinc-200 dark:border-zinc-700/60 dark:shadow-none active:scale-[0.98] transition-all"
               >
-                <Download className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
+                <Download className="w-4 h-4 text-zinc-500 dark:text-zinc-400 shrink-0" />
                 <span>Download PDF</span>
               </a>
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-zinc-700 hover:text-zinc-900 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-100 dark:hover:bg-zinc-800/60 transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-zinc-700 hover:text-zinc-900 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-100 dark:hover:bg-zinc-800/60 transition-colors"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 shrink-0" />
                 <span>Contact Me</span>
               </a>
 
               {/* Social Icons */}
-              <div className="flex items-center gap-2 pt-2 sm:pt-0 sm:ml-auto">
+              <div className="flex items-center justify-center gap-2 pt-2 sm:pt-0 sm:ml-auto">
                 <a
                   href={personalInfo.linkedin}
                   target="_blank"
@@ -184,13 +184,14 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
           </div>
 
           {/* Right Column: Profile Illustration */}
-          <div className="lg:col-span-5 flex items-center justify-center relative">
-            <div className="relative w-full max-w-[440px] aspect-square rounded-2xl overflow-hidden border border-zinc-200 bg-white shadow-xl shadow-zinc-200/50 dark:border-zinc-800/80 dark:bg-zinc-900 dark:shadow-2xl dark:shadow-black/40">
+          <div className="lg:col-span-5 flex items-center justify-center relative mt-4 lg:mt-0">
+            <div className="relative w-full max-w-[260px] sm:max-w-[340px] lg:max-w-[440px] aspect-square rounded-2xl overflow-hidden border border-zinc-200 bg-white shadow-lg sm:shadow-xl shadow-zinc-200/50 dark:border-zinc-800/80 dark:bg-zinc-900 dark:shadow-2xl dark:shadow-black/40">
               <Image
                 src="/hero-illustration.jpg"
                 alt="Developer at desk illustration"
                 fill
                 priority
+                sizes="(max-width: 640px) 260px, (max-width: 1024px) 340px, 440px"
                 className="object-cover object-center"
               />
             </div>
@@ -199,19 +200,19 @@ export const Hero = ({ onOpenResume }: HeroProps) => {
         </div>
 
         {/* Key Stats Cards */}
-        <div id="about" className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-zinc-200 dark:border-zinc-800/60">
+        <div id="about" className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-zinc-200 dark:border-zinc-800/60">
           {keyStats.map((stat) => (
             <div
               key={stat.label}
-              className="p-5 rounded-xl bg-white border border-zinc-200 hover:border-zinc-300 shadow-sm dark:bg-zinc-900/60 dark:border-zinc-800/60 dark:hover:border-zinc-700 dark:shadow-none transition-colors"
+              className="p-3.5 sm:p-5 rounded-xl bg-white border border-zinc-200 hover:border-zinc-300 shadow-sm dark:bg-zinc-900/60 dark:border-zinc-800/60 dark:hover:border-zinc-700 dark:shadow-none transition-colors"
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-tight">
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-xs font-bold text-zinc-800 dark:text-zinc-200 mt-1">
+              <div className="text-[11px] sm:text-xs font-bold text-zinc-800 dark:text-zinc-200 mt-1 leading-tight">
                 {stat.label}
               </div>
-              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">
+              <div className="text-[10px] sm:text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5 line-clamp-2">
                 {stat.detail}
               </div>
             </div>
