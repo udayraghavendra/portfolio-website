@@ -11,7 +11,7 @@ export const Education = () => {
         
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+          <div className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2">
             Academic Background
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
@@ -43,7 +43,7 @@ export const Education = () => {
                   {edu.degree}
                 </h3>
 
-                <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-1">
+                <div className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mt-1">
                   {edu.institution}
                 </div>
 

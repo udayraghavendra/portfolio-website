@@ -24,7 +24,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
         {/* Header Bar */}
         <div className="flex items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 flex items-center justify-center font-bold">
+            <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">
               <FileText className="w-4 h-4" />
             </div>
             <div>
@@ -41,7 +41,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
             <a
               href="/auday_resume.pdf"
               download="Adabala_Uday_Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-600 dark:hover:bg-indigo-500 transition-colors shadow-sm"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download PDF</span>
@@ -87,7 +87,7 @@ export const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
             <a
               href="/auday_resume.pdf"
               download="Adabala_Uday_Resume.pdf"
-              className="text-blue-600 dark:text-blue-400 font-medium hover:underline"
+              className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline"
             >
               Click here to save offline
             </a>

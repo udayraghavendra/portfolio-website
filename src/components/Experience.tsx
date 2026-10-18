@@ -18,7 +18,7 @@ export const Experience = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+          <div className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2">
             Work Experience
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
@@ -44,12 +44,12 @@ export const Experience = () => {
                       {exp.role}
                     </h3>
                     <span className="text-zinc-400 font-normal">at</span>
-                    <span className="text-lg sm:text-xl font-semibold text-blue-600 dark:text-blue-400">
+                    <span className="text-lg sm:text-xl font-semibold text-indigo-600 dark:text-indigo-400">
                       {exp.company}
                     </span>
 
                     {exp.highlightBadge && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-400 border border-blue-200 dark:border-blue-800/60">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/60">
                         {exp.highlightBadge}
                       </span>
                     )}
@@ -78,7 +78,7 @@ export const Experience = () => {
               <div className="mt-5 space-y-2.5">
                 {exp.bullets.map((bullet, idx) => (
                   <div key={idx} className="flex items-start gap-3 text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400 mt-2.5 shrink-0" />
                     <span>{bullet}</span>
                   </div>
                 ))}
